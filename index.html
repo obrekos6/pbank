@@ -4,25 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>П-Банк — Главная</title>
+
+    <!-- Подключение CSS -->
     <link rel="stylesheet" href="style.css">
-    <!-- ПОДКЛЮЧЕНИЕ SUPABASE (локальная копия) -->
-    <script src="../supabase.js"></script>
+
+    <!-- Подключение Supabase -->
+    <script src="supabase.js"></script>
     <script>
         const SUPABASE_URL = 'https://ggteikachpyvrvwzuprm.supabase.co';
-        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdndGVpa2FjaHB5dnJ2d3p1cHJtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE5ODA5ODEsImV4cCI6MjA4NzU1Njk4MX0.MwhlEF2I2N5_UH7rdpKRnQ32lKGBqIL9j2umiKSNhO8';
+        const SUPABASE_ANON_KEY = 'YOUR_ANON_KEY';
     </script>
 </head>
+
 <body>
 
 <header class="container header">
     <div class="header-left">
-       <img src="logo.png" alt="П-Банк" class="logo-img">
+        <!-- Логотип -->
+        <img src="logo.png" alt="П-Банк" class="logo-img" onclick="location.href='index.html'">
+
+        <!-- Меню -->
         <div class="nav-item">
-            Еще ▾ 
+            Еще ▾
             <div class="dropdown" id="extra-dropdown"></div>
         </div>
     </div>
 
+    <!-- Личный кабинет -->
     <div class="nav-item" id="account-menu">
         Личный кабинет ▾
         <div class="dropdown" id="account-dropdown"></div>
@@ -34,7 +42,8 @@
     <p class="title-sub">По крайней мере в СП-Союзе</p>
 </main>
 
+<!-- Скрипты -->
 <script src="script.js"></script>
-</body>
 
+</body>
 </html>
