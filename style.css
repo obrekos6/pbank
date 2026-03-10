@@ -1,0 +1,161 @@
+:root {
+    --accent: rgba(0,0,0,0.4);
+    --text-sec: rgba(0,0,0,0.4);
+}
+
+body { 
+    margin: 0; 
+    font-family: 'Segoe UI', sans-serif; 
+    background: #fff; 
+    overflow-x: hidden; 
+}
+
+html { overflow-x: hidden; }
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* Шапка */
+.header { 
+    padding: 15px 0; 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.header-left { display: flex; align-items: center; gap: 40px; }
+
+.logo-img { 
+    height: 48px; 
+    border-radius: 18px 18px 4px 18px; 
+    cursor: pointer; 
+}
+
+/* Навигация и Дропдауны */
+.nav-item { position: relative; padding: 20px 0; cursor: pointer; font-weight: 500; }
+
+#account-menu { margin-right: 20px; }
+
+.dropdown {
+    position: absolute;
+    top: 100%; 
+    left: 0; 
+    width: 260px;
+    background: white; 
+    border-radius: 16px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+    border: 1px solid #eee; 
+    padding: 15px; 
+    z-index: 1000;
+    
+    /* Анимация: прозрачность + выплывание снизу */
+    opacity: 0; 
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+#account-dropdown {
+    right: 0;
+    left: auto;
+}
+
+.nav-item:hover .dropdown { 
+    opacity: 1; 
+    visibility: visible; 
+    transform: translateY(10px); 
+}
+
+.menu-link {
+    display: block; 
+    padding: 12px; 
+    text-decoration: none; 
+    color: #333;
+    border-radius: 10px; 
+    transition: 0.2s; 
+    font-weight: 500;
+}
+
+.menu-link:hover { background: #f5f5f5; color: var(--accent); }
+
+.btn-auth-box {
+    display: block; 
+    text-align: center; 
+    background: #f0f0f0;
+    padding: 14px; 
+    border-radius: 12px; 
+    text-decoration: none; 
+    color: #000; 
+    font-weight: 600;
+}
+
+/* Анимация текста Hero */
+.hero { padding: 140px 0; }
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.title-main {
+    font-size: 64px; 
+    font-weight: 800; 
+    margin: 0 0 15px 20px;
+    opacity: 0; 
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.title-sub {
+    font-size: 24px; 
+    color: var(--text-sec); 
+    margin-top: 15px;
+    margin-left: 20px;
+    opacity: 0; 
+    animation: fadeInUp 0.8s ease forwards; 
+    animation-delay: 1s; /* Появление через секунду */
+}
+
+/* Мобильная адаптивность */
+@media (max-width: 768px) {
+    .container { padding: 0 15px; }
+    
+    .header { 
+        padding: 10px 0; 
+        flex-wrap: wrap; 
+        gap: 10px;
+    }
+    
+    .header-left { gap: 20px; }
+    
+    .logo-img { height: 40px; margin-left: 10px; }
+    
+    .nav-item { padding: 10px 0; }
+    
+    #account-menu { margin-right: 15px; }
+    
+    .dropdown { width: 200px; max-width: calc(100vw - 30px); }
+    
+    #account-dropdown { right: 0; left: auto; }
+    
+    .hero { padding: 100px 0; }
+    
+    .title-main { font-size: 48px; margin-bottom: 20px; margin-left: 15px; }
+    
+    .title-sub { font-size: 20px; margin-left: 15px; }
+}
+
+@media (max-width: 480px) {
+    .header-left { gap: 15px; }
+    
+    .dropdown { width: 180px; max-width: calc(100vw - 30px); }
+    
+    .hero { padding: 80px 0; }
+    
+    .title-main { font-size: 36px; margin-left: 10px; }
+    
+    .title-sub { font-size: 18px; margin-left: 10px; }
+    
+    #account-menu { margin-right: 10px; }
+    
+    #account-dropdown { right: 0; left: auto; }
+}
